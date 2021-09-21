@@ -13,7 +13,7 @@ export function getTaskActions(app, dispatch) {
 			try {
 
 				dispatch({type: 'ADD_TASk', isLoading: true});
-				realm = await openRealm() // on récupère la base associé à l'utilisateur
+				let realm = await openRealm() // on récupère la base associé à l'utilisateur
 
 				realm.write(() => {
 

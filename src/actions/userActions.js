@@ -22,7 +22,7 @@ export function getUserActions(app, dispatch) {
 				const user = await app.logIn(credentials);
 				console.log('successfully logged in ', user.id);
 
-				realm = await openRealm(user) // on récupère la base associé à l'utilisateur
+				let realm = await openRealm(user) // on récupère la base associé à l'utilisateur
 				const userData = realm.objects('User')
 				const userVisibleData = { _id: userData[0]._id, email: userData[0].email, lastname: userData[0].lastname, firstname: userData[0].firstname}
 
@@ -76,7 +76,7 @@ export function getUserActions(app, dispatch) {
 				const user = await app.logIn(credentials);
 				console.log('l\'inscription effectuée avec succès !!', user.id)
 
-				realm = await openRealm(user) // on récupère la base associé à l'utilisateur
+				let realm = await openRealm(user) // on récupère la base associé à l'utilisateur
 
 				realm.write(() => {
 

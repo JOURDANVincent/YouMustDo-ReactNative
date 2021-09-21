@@ -21,7 +21,7 @@ export default openRealm = async ( ) => {
             },
         };
 
-        realm = await Realm.open(config)
+        const realm = await Realm.open(config)
         console.log('Connection DB OK !!!!!')
           
         return realm ;
